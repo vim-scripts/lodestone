@@ -2,17 +2,20 @@
 "
 " Name:         lodestone.vim
 " Maintainer:   Matt Petty <matt@kizmeta.com> 
-" Last Change:  30 July 2010
+" Last Change:  16 September 2010
 " License:      public domain
-" Version:      4.0
+" Version:      4.1
 "
-" Based on lucius, railscasts, many others
+" 256 color scheme based on lucius, railscasts, many others.
+" Looks good, feels good, but is secretly evil in a good way.
+" This file is also kept here:
+" http://github.com/lodestone/lodestone.vim
 
 
 set background=dark
 hi clear
 if exists("syntax_on")
-    syntax reset
+  syntax reset
 endif
 let colors_name="lodestone"
 
@@ -218,8 +221,10 @@ hi CursorLine       cterm=NONE              ctermbg=236             cterm=none
 " Misc
 " ----
 " NerdTREE "|"
-hi treePart        guifg=#c0e0FF                                   gui=none
+hi treePart        guifg=#c0e0FF    gui=none
+hi treePart        ctermfg=069      gui=none
 hi treeDir         guifg=#c0e0b0    gui=none
+hi treeDir         ctermfg=069      gui=none
 
 " directory names and other special names in listings
 hi Directory        guifg=#c0e0b0                                   gui=none
@@ -372,12 +377,14 @@ hi Visual           ctermfg=NONE            ctermbg=24
 " hi link railsMethod         PreProc
 " hi link rubyDefine          Keyword
 " hi link rubySymbol          Constant
+hi rubySymbol guifg=#800000 ctermfg=124
 " hi link rubyAccess          rubyMethod
 " hi link rubyAttribute       rubyMethod
 " hi link rubyEval            rubyMethod
 " hi link rubyException       rubyMethod
 " hi link rubyInclude         rubyMethod
-" hi link rubyStringDelimiter rubyString
+hi rubyString guifg=#60e000 ctermfg=28
+hi link rubyStringDelimiter rubyString
 " hi link rubyRegexp          Regexp
 " hi link rubyRegexpDelimiter rubyRegexp
 " hi link rubyConstant        Identifier
@@ -389,6 +396,9 @@ hi Visual           ctermfg=NONE            ctermbg=24
 " 
 " highlight Special                   guifg=#DA4939 ctermfg=167 
 " highlight rubyClass                 guifg=#FFFFFF ctermfg=15
+hi rubyClass guifg=#905000 ctermfg=166
+syn keyword Identifier context
+
 " highlight rubyPseudoVariable        guifg=#FFC66D ctermfg=221
 " 
 " hi link javascriptRegexpString  Regexp
